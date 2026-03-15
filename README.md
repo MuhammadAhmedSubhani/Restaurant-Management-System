@@ -1,104 +1,211 @@
 # Restaurant Management System
 
-A console-based **Restaurant Management System** built in **C++**. This project simulates a real-world restaurant workflow with four separate portals: Admin, Manager, Employee, and Customer. 
+
+
+
+A **console-based Restaurant Management System built in C++** that simulates a real-world restaurant workflow.
+The system supports **four different user portals (Admin, Manager, Employee, Customer)** and includes features such as **order processing, stock management, sales tracking, and CSV data export**.
+
 ---
 
 ## Features
 
-- **Admin Portal** — Secure login, manage branches, customers, and menu items; view dashboard with sales and orders; export data to Excel (CSV).
-- **Manager Portal** — View total sales, stock inventory per cuisine, and all pending/completed orders; export data to CSV.
-- **Employee Portal** — View and process grouped pending orders by customer session; mark orders as completed and update branch sales.
-- **Customer Portal** — Register/login by name, browse cuisine menus (Italian, Chinese, Mexican), select dishes and toppings, place orders, and receive a printed receipt.
-- **Stock Management** — Each dish tracks available stock; out-of-stock items cannot be ordered.
-- **Order Batching** — All items ordered in one customer session are grouped under a single batch (by customer name + timestamp).
-- **Receipt Printing** — Auto-generated itemized receipt printed at checkout.
-- **CSV Export** — Export branches, customers, menu, stock inventory, pending orders, and completed orders to `RestaurantData.csv` (Excel-compatible).
+* **Admin Portal**
+
+  * Secure login system
+  * Manage restaurant branches
+  * Manage customer records
+  * Manage menu items
+  * View dashboard with total sales and orders
+  * Export system data to Excel-compatible CSV
+
+* **Manager Portal**
+
+  * View total restaurant sales
+  * Monitor stock inventory by cuisine
+  * Track pending and completed orders
+  * Export reports to CSV
+
+* **Employee Portal**
+
+  * View grouped pending orders
+  * Process customer order batches
+  * Mark orders as completed
+  * Automatically update branch sales
+
+* **Customer Portal**
+
+  * Register or login using name
+  * Browse cuisine-based menus
+  * Select dishes and toppings
+  * Place orders
+  * Receive a printed receipt
+
+* **Stock Management**
+
+  * Each dish tracks available inventory
+  * Prevents ordering of out-of-stock items
+
+* **Order Batching**
+
+  * Items ordered in a single session are grouped into one batch
+  * Batch identification uses **customer name + timestamp**
+
+* **Receipt Printing**
+
+  * Generates an itemized receipt at checkout
+
+* **CSV Export**
+
+  * Exports:
+  * Branch data
+  * Customers
+  * Menu items
+  * Inventory stock
+  * Pending orders
+  * Completed orders
+
+All data is exported to:
+
+```
+RestaurantData.csv
+```
+
+which can be opened directly in **Microsoft Excel or Google** **Sheets**.
 
 ---
 
 ## Portals Overview
 
-| Portal   | Access               | Key Actions                                   |
-|----------|----------------------|-----------------------------------------------|
-| Admin    | Username + Password  | Manage branches, customers, menu; dashboard; export |
-| Manager  | Open access          | View sales, stock, orders; export to CSV      |
-| Employee | Open access          | Process and complete grouped customer orders  |
-| Customer | Name-based           | Browse menu, add toppings, place orders, get receipt |
-
+| Portal   | Access              | Key Actions                                         |
+| -------- | ------------------- | --------------------------------------------------- |
+| Admin    | Username + Password | Manage branches, customers, menu, dashboard, export |
+| Manager  | Open access         | View sales, inventory, and orders                   |
+| Employee | Open access         | Process pending orders                              |
+| Customer | Name-based          | Browse menu, order food, receive receipt            |
 
 ---
 
 ## Cuisines & Menu
 
-| Cuisine | Dishes                         | Toppings                          |
-|---------|--------------------------------|-----------------------------------|
-| Italian | Pizza, Pasta, Risotto         | Tomato Sauce, Mozzarella, Basil   |
-| Chinese | Dumplings, Sweet & Sour, Kung Pao | Soy Sauce, Ginger, Garlic    |
-| Mexican | Tacos, Burritos, Enchiladas   | Salsa, Guacamole, Sour Cream      |
-
-
+| Cuisine | Dishes                            | Toppings                        |
+| ------- | --------------------------------- | ------------------------------- |
+| Italian | Pizza, Pasta, Risotto             | Tomato Sauce, Mozzarella, Basil |
+| Chinese | Dumplings, Sweet & Sour, Kung Pao | Soy Sauce, Ginger, Garlic       |
+| Mexican | Tacos, Burritos, Enchiladas       | Salsa, Guacamole, Sour Cream    |
 
 ---
 
 ## Tech Stack
 
-- **Language:** C++
-- **Libraries:** Standard C++ headers such as `<iostream>`, `<fstream>`, `<string>`, `<vector>`, etc. (no third-party libraries required).
-- **Dependencies:** No external dependencies — runs with any standard-compliant C++ compiler.
+**Language**
+
+* C++
+
+**Libraries**
+
+Standard C++ libraries only:
+
+* `<iostream>`
+* `<fstream>`
+* `<string>`
+* `<vector>`
+* `<ctime>`
+
+**Dependencies**
+
+No external libraries required.
+Runs with **any standard-compliant C++ compiler**.
 
 ---
 
 ## How to Run
 
-1. **Clone the repository**
+### 1. Clone the Repository
 
-   ```bash
-   git clone https://github.com/MuhammadAhmedSubhani/Restaurant-Management-System.git
-   cd Restaurant-Management-System
-2.	Compile the source file
-bash
+```bash
+git clone https://github.com/MuhammadAhmedSubhani/Restaurant-Management-System.git
+cd Restaurant-Management-System
+```
+
+### 2. Compile the Program
+
+```bash
 g++ Rest_Project.cpp -o RestaurantSystem
-3.	Run the executable
-•	On Linux/macOS:
-bash
+```
+
+### 3. Run the Program
+
+Linux / macOS
+
+```bash
 ./RestaurantSystem
-•	On Windows:
-bash
+```
+
+Windows
+
+```bash
 RestaurantSystem.exe
+```
 
-________________________________________
-Admin Credentials
-Field	Value
-Username	admin
-Password	1234
+---
 
-________________________________________
-Project Structure
-text
+## Admin Credentials
+
+| Field    | Value |
+| -------- | ----- |
+| Username | admin |
+| Password | 1234  |
+
+---
+
+## Project Structure
+
+```
 Restaurant-Management-System/
-├── Rest_Project.cpp     # Main source code
-├── RestaurantData.csv   # Auto-generated export file
-└── README.md            # Project documentation
+│
+├── Rest_Project.cpp
+│   Main source code
+│
+├── RestaurantData.csv
+│   Auto-generated export file
+│
+└── README.md
+    Project documentation
+```
 
-________________________________________
-Future Improvements
-•	Add a graphical user interface (GUI) using a framework like Qt or SFML.
-•	Integrate a real database (e.g., MySQL, SQLite) instead of CSV-based storage.
-•	Implement unit tests for core functionalities (order processing, stock updates, CSV export).
-•	Enhance validation, error handling, and input sanitization.
-•	Add support for discounts, tax calculation, and multi-branch analytics dashboard.
+---
 
-________________________________________
-Author
+## Possible Enhancements
+
+Future improvements that could extend the project:
+
+* Add a **graphical user interface (GUI)** using frameworks such as Qt or SFML
+* Integrate a **real database system** (MySQL, SQLite, PostgreSQL)
+* Implement **unit testing** for core features (order processing, stock updates, CSV export)
+* Improve **input validation and error handling**
+* Add **tax calculation and discount systems**
+* Implement **multi-branch analytics dashboard**
+* Add **user authentication and role management**
+
+---
+
+## Author
+
 Muhammad Ahmed Subhani
-________________________________________
-📋 Contribution
-This repository is a personal academic project for learning and practice, but feedback and suggestions are always welcome! 
-If you notice a bug, have an improvement idea, or want to suggest better design patterns, feel free to open an issue for constructive feedback.
-________________________________________
-📧 Contact
-Name: Muhammad Ahmed Subhani
-University: Superior University
-Program: Software Engineering
-Last Updated: January 2026
+Software Engineering Student – Superior University
 
+---
+
+## Contributions
+
+This project was created as an **academic learning project**.
+
+Feedback, suggestions, and improvements are welcome.
+If you discover a bug or have an idea for improvement, feel free to **open an issue**.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
