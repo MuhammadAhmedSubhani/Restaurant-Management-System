@@ -6,6 +6,11 @@
 A **console-based Restaurant Management System built in C++** that simulates a real-world restaurant workflow.
 The system supports **four different user portals (Admin, Manager, Employee, Customer)** and includes features such as **order processing, stock management, sales tracking, and CSV data export**.
 
+## Live Demo
+
+> Try the live web preview here:
+> [https://ais-pre-ql4v7ttrjjfpeimeuz4ba2-699438916320.asia-southeast1.run.app](https://ais-pre-ql4v7ttrjjfpeimeuz4ba2-699438916320.asia-southeast1.run.app)
+
 ---
 
 ## Features
